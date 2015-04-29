@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Visa Card Advisor - Prototype</title>
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=.7, minimal-ui">
+    <!--Scripts-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <!--Styles-->
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <!--Fonts-->
+    <script src="//use.typekit.net/lut4nrg.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+      <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.4.min.js"></script>
+
+</head>
+<body>
+  <header class="nav">
+    <nav>
+      <div class="logo"></div>
+      <button class="navbar-toggle" type="button" tabindex="0">
+        <span class="toggle-text">Menu</span><span class="toggle-icon"></span>
+      </button>
+      <div class="header-search">
+        <span class="search-icon"></span>
+      </div>
+      </nav>
+  </header>
+  <div class="alert"><span class="icon"><img src="img/you.svg" class="svg"></span><br><span class="message">Message</span></div>
+  <div class="questions">
+    <div class="question sort active">
+      <div class="icons">
+        <img src="img/card.svg" class="svg"><img src="img/arrows.svg" class="svg">
+      </div>
+      <h1>Rank these credit card features from most to least important</h1>
+      <ul class="answers rank items">
+        <li class="answer">
+          <span class="disable" data-feature-id="4">&#x2715;</span><span class="text"></span>
+        </li>
+        <li class="answer">
+          <span class="disable" data-feature-id="0">&#x2715;</span><span class="text"></span>
+        </li>
+        <li class="answer">
+          <span class="disable" data-feature-id="9">&#x2715;</span><span class="text"></span>
+        </li>
+        <li class="answer">
+          <span class="disable" data-feature-id="1">&#x2715;</span><span class="text"></span>
+        </li>
+        <li class="answer">
+          <span class="disable" data-feature-id="5">&#x2715;</span><span class="text"></span>
+        </li>
+        <li class="answer">
+          <span class="disable" data-feature-id="7">&#x2715;</span><span class="text"></span>
+        </li>
+        <li class="answer">
+          <span class="disable" data-feature-id="6">&#x2715;</span><span class="text"></span>
+        </li>
+      </ul>
+      <button class="next">Next</button><button class="next help">I don’t know. Help Me.</button>
+      <div class="spacer"></div>
+    </div>
+    <div class="question slider">
+      <div class="slider-holder active">
+        <div class="icon"><img src="img/card.svg" class="svg"></div>
+        <h1 data-qid="0">.</h1>
+        <div class="slider-container">
+          <div class="slider-label active" data-answer-id="q0-0"></div>
+          <div class="slider-label" data-answer-id="q0-1"></div>
+          <div class="slider-label" data-answer-id="q0-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+        <div class="slider-container">
+          <div class="slider-label active" data-answer-id="q0-3"> </div>
+          <div class="slider-label" data-answer-id="q0-4"> </div>
+          <div class="slider-label" data-answer-id="q0-5"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">
+        <div class="icon"><img src="img/bill.svg" class="svg"></div>
+        <h1 data-qid="1"></h1>
+        <div class="slider-container">
+          <div class="slider-label active" data-answer-id="q1-0"></div>
+          <div class="slider-label" data-answer-id="q1-1"></div>
+          <div class="slider-label" data-answer-id="q1-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">
+        <div class="icon"><img src="img/you.svg" class="svg"></div>
+        <h1 data-qid="2"></h1>
+        <div class="slider-container">
+          <div class="slider-label active" data-answer-id="q2-0"></div>
+          <div class="slider-label"  data-answer-id="q2-1"></div>
+          <div class="slider-label" data-answer-id="q2-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">
+        <div class="icon"><img src="img/you.svg" class="svg"></div>
+        <h1 data-qid="3"></h1>
+        <div class="slider-container">
+          <div class="slider-label active" data-answer-id="q3-0"></div>
+          <div class="slider-label" data-answer-id="q3-1"></div>
+          <div class="slider-label" data-answer-id="q3-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">
+        <div class="icon"><img src="img/shopping.svg" class="svg"></div>
+        <h1 data-qid="4"></h1>
+        <div class="slider-container">
+          <div class="slider-label active" data-answer-id="q4-0"></div>
+          <div class="slider-label" data-answer-id="q4-1"></div>
+          <div class="slider-label" data-answer-id="q4-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">
+        <div class="icon"><img src="img/internet.svg" class="svg"></div>
+        <h1 data-qid="5"></h1>
+        <div class="slider-container three">
+          <div class="slider-label active" data-answer-id="q5-0"></div>
+          <div class="slider-label" data-answer-id="q5-1"></div>
+          <div class="slider-label" data-answer-id="q5-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">
+        <div class="icon"><img src="img/phone.svg" class="svg"></div>
+        <h1 data-qid="6"></h1>
+        <div class="slider-container three">
+          <div class="slider-label active" data-answer-id="q6-0"></div>
+          <div class="slider-label" data-answer-id="q6-1"></div>
+          <div class="slider-label" data-answer-id="q6-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">
+        <div class="icon"><img src="img/bed.svg" class="svg"></div>
+        <h1 data-qid="7"></h1>
+        <div class="slider-container three">
+          <div class="slider-label active" data-answer-id="q7-0"></div>
+          <div class="slider-label" data-answer-id="q7-1"></div>
+          <div class="slider-label" data-answer-id="q7-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">
+        <div class="icon"><img src="img/bed.svg" class="svg"></div>
+        <h1 data-qid="8"></h1>
+        <div class="slider-container three">
+          <div class="slider-label active"  data-answer-id="q8-0"></div>
+          <div class="slider-label"  data-answer-id="q8-1"></div>
+          <div class="slider-label" data-answer-id="q8-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">
+        <div class="icon"><img src="img/car.svg" class="svg"></div>
+        <h1 data-qid="9"></h1>
+        <div class="slider-container three">
+          <div class="slider-label active" data-answer-id="q9-0"></div>
+          <div class="slider-label" data-answer-id="q9-1"></div>
+          <div class="slider-label" data-answer-id="q9-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">      
+        <div class="icon"><img src="img/meal.svg" class="svg"></div>
+        <h1 data-qid="10"></h1>
+        <div class="slider-container three">
+          <div class="slider-label active" data-answer-id="q10-0"></div>
+          <div class="slider-label" data-answer-id="q10-1"> </div>
+          <div class="slider-label" data-answer-id="q10-2"> </div>
+          <input type="range" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">      
+        <div class="icon"><img src="img/shopping.svg" class="svg"></div>
+        <h1 data-qid="11"></h1>
+        <div class="slider-container three">
+          <div class="slider-label active" data-answer-id="q11-0"></div>
+          <div class="slider-label" data-answer-id="q11-1"></div>
+          <div class="slider-label" data-answer-id="q11-2"></div>
+          <input type="range" value="0" min="0" max="2" name="range">
+        </div>
+      </div>      
+      <div class="slider-holder">      
+        <div class="icon"><img src="img/card.svg" class="svg"></div>
+        <h1 data-qid="12"></h1>
+        <div class="slider-container three">
+          <div class="slider-label active" data-answer-id="q12-0"></div>
+          <div class="slider-label" data-answer-id="q12-1"></div>
+          <div class="slider-label" data-answer-id="q12-2"></div>
+          <input type="range" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">      
+        <div class="icon"><img src="img/card.svg" class="svg"></div>
+        <h1 data-qid="13"></h1>
+        <div class="slider-container three">
+          <div class="slider-label active" data-answer-id="q13-0"></div>
+          <div class="slider-label" data-answer-id="q13-1"></div>
+          <div class="slider-label" data-answer-id="q13-2"></div>
+          <input type="range" value="0" min="0" max="2" name="range">
+        </div>
+      </div>          
+      
+      <button class="next">Next</button>
+    </div>
+    <div class="question profile">
+      <div class="madlib">
+        <h1>Based on these results, you <span class="adj">really care about</span> <span class="important">High Cash Back</span>, <span class="adj">care a little about</span> <span class="important">Low/No Annual Fee</span>, and <span class="adj">care a little about</span> <span class="important">High Rewards</span>.</h1>
+      </div>
+      <div class="slider-holder active">
+        <div class="icon"><img src="img/you.svg" class="svg"></div>
+        <h1>My credit rating is...</h1>
+        <div class="slider-container">
+          <div class="slider-label active">Don't Know</div>
+          <div class="slider-label">Poor</div>
+          <div class="slider-label">Fair</div>
+          <div class="slider-label">Good</div>
+          <div class="slider-label">Excellent</div>
+          <input class="credit-score-slider" type="range" id="slide-value" value="0" min="0" max="4" name="range">
+        </div>
+      </div>
+      <button class="next">Find a match</button>
+    </div>
+
+    <div class="question upload">
+      <h1>The card I’m replacing is...</h1>
+      <input type="text" placeholder="Type Card Name"></input>
+      <div class="dropdown">
+        <h1 class="hidden">BankAmericard Travel Rewards</h1>
+        <h1 class="hidden">BankAmericard Better Balance Rewards</h1>
+        <h1 class="hidden">Bank of Albuquerque Visa Bonus Rewards PLUS Card</h1>
+        <h1 class="hidden">BB&T Bright Card</h1>
+      </div>
+      <div class="or">or</div>
+      <h2 class="answer upload-button">Upload Card Image + </h2>
+      <p>We will blur the numbers before upload</p>
+      <button class="next">Show Me Alternatives</button>
+      <button class="switch"><span class="dis">Ad</span> <img src="img/cards/slate.png">Switch from Bank of America to Chase.</button>
+      <button class="checkout"><img src="img/cards/checkout.png">This card is eligible for Visa Checkout,<br>the easier way to pay online.</button>
+    </div>
+    <!-- <div class="question">
+      <h1>My Everywhere would be...</h1>
+      <div class="answers">
+        <div class="answer">A New Car</div>
+        <div class="answer">College Tuition</div>
+        <div class="answer">A Vacation</div>
+        <div class="answer">Super Bowl Tickets</div>
+        <div class="answer">A Giant TV</div>
+        <button>Next</button>
+      </div>
+    </div> -->
+
+  </div>
+  <div class="content hidden">
+    <div class="conversation">
+      <div class="madlib">
+        <div class="madlib">
+        <h4>Based on these results, you <span class="adj">really care about</span> <span class="important">High Cash Back</span>, <span class="adj">care a little about</span> <span class="important">Low/No Annual Fee</span>, and <span class="adj">care a little about</span> <span class="important">High Rewards</span>.</h4>
+      </div>
+      </div>
+      <h4 class="category">Card Habits</h4>
+      <div class="slider-holder active first">
+        <div class="slider-container">
+          <div class="icon"><img src="img/card.svg" class="svg"></div>
+          <h1 data-qid="0">.</h1>
+          <div class="slider-label active" data-answer-id="q0-0"></div>
+          <div class="slider-label" data-answer-id="q0-1"></div>
+          <div class="slider-label" data-answer-id="q0-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+        <div class="slider-container">
+          <div class="slider-label active" data-answer-id="q0-3"> </div>
+          <div class="slider-label" data-answer-id="q0-4"> </div>
+          <div class="slider-label" data-answer-id="q0-5"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <h4 class="category">Finances</h4>
+      <div class="slider-holder">
+        <div class="slider-container">
+          <div class="icon"><img src="img/bill.svg" class="svg"></div>
+          <h1 data-qid="1"></h1>          
+          <div class="slider-label" data-answer-id="q1-0"></div>
+          <div class="slider-label" data-answer-id="q1-1"></div>
+          <div class="slider-label" data-answer-id="q1-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <h4 class="category">Lifestyle</h4>
+      <div class="slider-holder">
+        <div class="slider-container">
+          <div class="icon"><img src="img/you.svg" class="svg"></div>
+          <h1 data-qid="2"></h1>
+          <div class="slider-label" data-answer-id="q2-0"></div>
+          <div class="slider-label"  data-answer-id="q2-1"></div>
+          <div class="slider-label" data-answer-id="q2-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">
+        <div class="slider-container">
+          <div class="icon"><img src="img/you.svg" class="svg"></div>
+          <h1 data-qid="3"></h1>
+          <div class="slider-label" data-answer-id="q3-0"></div>
+          <div class="slider-label" data-answer-id="q3-1"></div>
+          <div class="slider-label" data-answer-id="q3-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">
+        <div class="slider-container">
+          <div class="icon"><img src="img/shopping.svg" class="svg"></div>
+          <h1 data-qid="4"></h1>
+          <div class="slider-label" data-answer-id="q4-0"></div>
+          <div class="slider-label" data-answer-id="q4-1"></div>
+          <div class="slider-label" data-answer-id="q4-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">
+        <div class="slider-container three">
+          <div class="icon"><img src="img/internet.svg" class="svg"></div>
+          <h1 data-qid="5"></h1>
+          <div class="slider-label" data-answer-id="q5-0"></div>
+          <div class="slider-label" data-answer-id="q5-1"></div>
+          <div class="slider-label" data-answer-id="q5-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">
+        <div class="slider-container three">
+          <div class="icon"><img src="img/phone.svg" class="svg"></div>
+          <h1 data-qid="6"></h1>          
+          <div class="slider-label" data-answer-id="q6-0"></div>
+          <div class="slider-label" data-answer-id="q6-1"></div>
+          <div class="slider-label" data-answer-id="q6-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">
+        <div class="slider-container three">
+          <div class="icon"><img src="img/bed.svg" class="svg"></div>
+          <h1 data-qid="7"></h1>
+          <div class="slider-label" data-answer-id="q7-0"></div>
+          <div class="slider-label" data-answer-id="q7-1"></div>
+          <div class="slider-label" data-answer-id="q7-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">
+        <div class="slider-container three">
+          <div class="icon"><img src="img/bed.svg" class="svg"></div>
+          <h1 data-qid="8"></h1>          
+          <div class="slider-label"  data-answer-id="q8-0"></div>
+          <div class="slider-label"  data-answer-id="q8-1"></div>
+          <div class="slider-label" data-answer-id="q8-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">
+        <div class="slider-container three">
+          <div class="icon"><img src="img/car.svg" class="svg"></div>
+          <h1 data-qid="9"></h1>          
+          <div class="slider-label" data-answer-id="q9-0"></div>
+          <div class="slider-label" data-answer-id="q9-1"></div>
+          <div class="slider-label" data-answer-id="q9-2"></div>
+          <input type="range" id="slide-value" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">
+        <div class="slider-container three">
+          <div class="icon"><img src="img/meal.svg" class="svg"></div>
+          <h1 data-qid="10"></h1>
+          <div class="slider-label" data-answer-id="q10-0"></div>
+          <div class="slider-label" data-answer-id="q10-1"> </div>
+          <div class="slider-label" data-answer-id="q10-2"> </div>
+          <input type="range" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">
+        <div class="slider-container three">
+          <div class="icon"><img src="img/shopping.svg" class="svg"></div>
+          <h1 data-qid="11"></h1>
+          <div class="slider-label" data-answer-id="q11-0"></div>
+          <div class="slider-label" data-answer-id="q11-1"></div>
+          <div class="slider-label" data-answer-id="q11-2"></div>
+          <input type="range" value="0" min="0" max="2" name="range">
+        </div>
+      </div>      
+      <div class="slider-holder"> 
+        <div class="slider-container three">
+          <div class="icon"><img src="img/card.svg" class="svg"></div>
+          <h1 data-qid="12"></h1>
+          <div class="slider-label" data-answer-id="q12-0"></div>
+          <div class="slider-label" data-answer-id="q12-1"></div>
+          <div class="slider-label" data-answer-id="q12-2"></div>
+          <input type="range" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+      <div class="slider-holder">
+        <div class="slider-container three">
+          <div class="icon"><img src="img/card.svg" class="svg"></div>
+          <h1 data-qid="13"></h1>
+          <div class="slider-label" data-answer-id="q13-0"></div>
+          <div class="slider-label" data-answer-id="q13-1"></div>
+          <div class="slider-label" data-answer-id="q13-2"></div>
+          <input type="range" value="0" min="0" max="2" name="range">
+        </div>
+      </div>
+    </div>
+    <div class="cards-list">
+      <h2 class="match-headline">We found a card that is a <b>GREAT</b> match for you.</h2>
+      <br><br>
+      <div class="card featured">
+        <div class="match">87% Match</div>
+        
+      </div>
+      <br><br><hr>
+      <div class="card yours">
+        <div class="card-image"><img src="img/cards/slate.png"><span class="add">+</span>Add Your Card</div>
+        <div class="guts">
+          <h2>Upload or select your card to see how it stacks up</h2>
+          <button>Add your card</button>
+          <br><br>
+          <h3></h3>
+          <p></p>
+        </div>
+      </div>
+      <div class="card ad active">
+        <div class="match">Featured Low APR</div>
+      </div>
+    </div>
+  </div>
+  <!--Application-->
+  <script type="text/javascript" src="js/plugins.js"></script>
+  <script type="text/javascript" src="js/Sortable/jquery.fn.sortable.js"></script>
+  <script type="text/javascript" src="js/cards.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/get.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+  <script type="text/javascript">
+  Parse.initialize("yTDcauaM45OOCMNtx96W87jPYsZLsEnBNg6Ae0ru", "fTdyJBHcRR5GHEa7Jk8Lx21IfT9ZHqaVXTNCfuuD");
+</script>
+</body>
+
+</html>
